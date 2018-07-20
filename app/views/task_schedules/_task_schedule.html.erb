@@ -5,4 +5,9 @@
   <td>
     <%= task_schedule.due_date %>
   </td>
+  <td>
+    <% unless task_schedule.completed %>
+      <%= link_to "Complete", complete_task_schedule_path(task_schedule), method: :put, remote: true %>
+    <% end %>
+  </td>
 </tr>

@@ -1,5 +1,5 @@
 class TaskSchedulesController < ApplicationController
-  before_action :set_task_schedule, only: [:show, :edit, :update, :destroy]
+  before_action :set_task_schedule, only: [:show, :edit, :update, :destroy, :complete]
 
   # GET /task_schedules
   # GET /task_schedules.json
@@ -59,6 +59,12 @@ class TaskSchedulesController < ApplicationController
       format.html { redirect_to task_schedules_url, notice: 'Task schedule was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def complete
+    @task_schedule.completed = true
+    @task_schedule.save
+    redirect_to user_path @task_schedule.user.id
   end
 
   private
