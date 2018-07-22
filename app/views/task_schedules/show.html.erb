@@ -15,5 +15,10 @@
   <%= @task_schedule.user %>
 </p>
 
+<p>
+  <strong>Completed:</strong>
+  <%= @task_schedule.completed? %>
+</p>
+
 <%= link_to 'Edit', edit_task_schedule_path(@task_schedule) %> |
 <%= link_to 'Back', task_schedules_path %>
