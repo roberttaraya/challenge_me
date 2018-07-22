@@ -20,5 +20,9 @@
   <%= @task_schedule.completed? %>
 </p>
 
+<p>
+  <strong>Incomplete:</strong>
+  <%= @task_schedule.incomplete %>
+</p>
 <%= link_to 'Edit', edit_task_schedule_path(@task_schedule) %> |
 <%= link_to 'Back', task_schedules_path %>
