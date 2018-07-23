@@ -5,4 +5,8 @@ class TaskSchedule < ApplicationRecord
   def completed?
     !!self.completed
   end
+
+  def incomplete?
+    !completed? && DateTime.now > self.due_date
+  end
 end
